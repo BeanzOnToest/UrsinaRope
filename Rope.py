@@ -23,9 +23,8 @@ class Node(Entity):
         return self.force_
     @force.setter
     def force(self, new:Vec3):
-        if not self.kinematic:
-            return
-        self.force_ = new
+        if self.kinematic:
+            self.force_ = new
 
 class Rope(Entity):
     def __init__(self, node_count:int = 12, nodes_visible:bool = False, natural_length:float = 5, stiffness:float = 10, dampening:float = 3, *args, **kwargs):

@@ -37,8 +37,8 @@ class Rope(Entity):
         self.kinematic_ = False
 
         self.nodes_ = []
-        for n in range(0, node_count): #possible list comprehension instead, probably less readble though (node_count,0,-1) (n!=node_count)
-            node = Node(parent=self, y = n*(-natural_length/node_count), kinematic = False, mass = 0.5/node_count, visible = nodes_visible) #kinematic: (n!=0)
+        for n in range(0, node_count):
+            node = Node(parent=self, y = n*(-natural_length/node_count), kinematic = False, mass = 0.5/node_count, visible = nodes_visible)
             self.nodes_.append(node)
         
         self.model = Mesh(mode="line", vertices=[node.position for node in self.nodes_], thickness=5)

@@ -1,7 +1,6 @@
 from ursina import *
 
-def dot(v1:Vec3, v2:Vec3):
-    return sum([a*b for a,b in zip(v1, v2)])
+dot = lambda v1, v2: sum([a*b for a,b in zip(v1, v2)])
 
 class Node(Entity):
     def __init__(self, mass:float = 1, kinematic:bool = True, visible:bool = False, *args, **kwargs):

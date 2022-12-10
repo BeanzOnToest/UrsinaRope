@@ -5,6 +5,7 @@ dot = lambda v1, v2: sum([a*b for a,b in zip(v1, v2)])
 class Node(Entity):
     def __init__(self, mass:float = 1, kinematic:bool = True, visible:bool = False, *args, **kwargs):
         super().__init__(model=Circle(10) if visible else None, color=color.red, scale=0.15, billboard=True, *args, **kwargs)
+        
         self.force_ = Vec3(0,0,0)
         self.velocity = Vec3(0,0,0)
         self.mass = mass
